@@ -24,7 +24,7 @@ int main()
 
     int nv, no, nn;
     string name, oprt, resource_cate, resource_name;
-    for (int i = 0; i < n; ++i)
+    for (int i = 0; i < n; ++i) // 输入角色信息
     {
         cin >> name; // 输入角色名
         // 接下来给角色各种属性
@@ -50,7 +50,7 @@ int main()
 
     int ns;
     string role_name, user_name;
-    for (int i = 0; i < m; ++i)
+    for (int i = 0; i < m; ++i) // 进行角色关联
     {
         cin >> role_name;
         cin >> ns;
@@ -95,7 +95,7 @@ int main()
 
 bool have_access(string user_name, string oprt, string resource_cate, string resource_name)
 {
-    for (string role_name : user[user_name]) // TODO 试试能不能用string
+    for (string role_name : user[user_name])
     {
         if (role[role_name].oprt.count(oprt) || role[role_name].oprt.count("*"))
             if (role[role_name].resource_cate.count(resource_cate) || role[role_name].resource_cate.count("*"))
